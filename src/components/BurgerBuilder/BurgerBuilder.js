@@ -65,8 +65,10 @@ class BurgerBuilder extends Component {
         })
 
         new1Ingredient[index1].count--
-        prixtt = prixtt - new1Ingredient[index1].prix
+        if (new1Ingredient[index1].count >= 0) {
 
+            prixtt = prixtt - new1Ingredient[index1].prix
+        }
         this.setState({
 
             ingredients: new1Ingredient,
