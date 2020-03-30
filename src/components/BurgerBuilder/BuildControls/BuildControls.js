@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './BuildControls.module.css'
 import BuildControl from './BuildControl/BuildControl'
 
+
 const buildControls = (props) => {
 
     let ingredientControls = [];
@@ -13,6 +14,7 @@ const buildControls = (props) => {
 
                 more={() => { props.addIngredient(item.id) }}
                 less={() => { props.rmvIngredient(item.id) }}
+                shouldDisable={item.count === 0}
 
             />
         )
@@ -27,7 +29,7 @@ const buildControls = (props) => {
             <p>Current Price : {props.curentprice} TND</p>
             {ingredientControls}
 
-            <button className={classes.OrderButton}> Order Now </button>
+            <button className={classes.OrderButton} onClick={props.modal}> Order Now: </button>
 
         </div>
     )

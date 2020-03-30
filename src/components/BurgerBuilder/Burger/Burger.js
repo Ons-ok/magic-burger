@@ -23,6 +23,13 @@ const Burger = (props) => {
     }
 
 
+    let message = null
+
+    if (list.length === 0) {
+        message = <p> please enter your ingredients!!! </p>
+    }
+
+
 
 
 
@@ -33,7 +40,7 @@ const Burger = (props) => {
             <Ingredients type='BreadTop' />
 
 
-
+            {message}
             {list}
             <Ingredients type='BreadBottom' />
 
